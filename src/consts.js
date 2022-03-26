@@ -1,0 +1,5 @@
+export const ADMIN_PATH = '/admin'
+export const NEWS_PATH = '/news'
+export const ARTICLES_PATH = '/articles'
+export const API_URL = 'http://localhost:7000/api'
+export const IMAGES_API_URL = 'http://localhost:7000'

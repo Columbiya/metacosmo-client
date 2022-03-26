@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { observer } from 'mobx-react-lite'
+import Header from "./components/Header/Header";
+import { Routes, Route } from 'react-router-dom'
+import { ADMIN_PATH, NEWS_PATH, ARTICLES_PATH } from './consts';
+import AdminPanel from "./components/AdminPanel/AdminPanel";
+import News from './components/News/News';
+import Articles from './components/Articles/Articles';
 
-function App() {
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Routes>
+        <Route path={NEWS_PATH} element={<News />} />
+        <Route path={ARTICLES_PATH} element={<Articles />} />
+        <Route index element={<AdminPanel />} />
+      </Routes>
+    </>
   );
 }
 
